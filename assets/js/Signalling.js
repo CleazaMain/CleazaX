@@ -1,12 +1,9 @@
 'use strict'
-Pusher.logToConsole = true;
-let channelName, pusher, base = "https://cleazax.netlify.app";
-// let channelName, pusher, base = "https://sharenetic.herokuapp.com";
-// let channelName, pusher, base = "http://127.0.0.1:3000";
+Pusher.logToConsole = false;
+let channelName, pusher, base = "https://sharenetic.vercel.app";
 fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
     "method": "GET",
     "headers": {
-        //   "cache-control": "no-cache",
         "Content-Type": "application/x-www-form-urlencoded"
     }
 })
@@ -18,8 +15,8 @@ fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
             localStorage.id = data.id;
             updateTooltip();}
         channelName = data.channel;
-        pusher = new Pusher('47258478449c5b426ba6', {
-            cluster: 'eu'
+        pusher = new Pusher('892a123070fc89c43124', {
+            cluster: 'ap2'
         });
         subscribe();
     })
@@ -42,20 +39,3 @@ async function signal(mes) {
         "body": JSON.stringify({ "id": mes.id, "message": mes })
     });
 }
-// Remove in production start
-function signallingDisconnect() {
-    fetch(base + "/disconnect?id=" + localStorage.id, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-    })
-        .then(function (response) {
-            console.log(response.status);
-        })
-        .catch(function (error) {
-            console.log(error.message);
-        });
-}
-window.addEventListener('beforeunload', signallingDisconnect);
-// Remove in production end
