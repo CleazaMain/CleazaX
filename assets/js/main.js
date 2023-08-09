@@ -4,7 +4,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 function updateTooltip() {
   new bootstrap.Tooltip(document.querySelector('#copyid'),{
-      title: `<em>Your ID is </em><b>${localStorage.id}</b>`,
+      title: `<em>Senin Kodun Kopyala </em><b>${localStorage.id}</b>`,
       html: true
   });
 }
