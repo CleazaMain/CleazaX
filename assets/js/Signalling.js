@@ -1,6 +1,6 @@
 'use strict';
 Pusher.logToConsole = false;
-let channelName, pusher, base = "https://cleazax.netlify.app/";
+let channelName, pusher, base = "https://cleazax.netlify.app";
 
 fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
     "method": "GET",
