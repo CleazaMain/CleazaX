@@ -19,7 +19,7 @@ fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
             updateTooltip();}
         channelName = data.channel;
         pusher = new Pusher('47258478449c5b426ba6', {
-            cluster: 'ap2'
+            cluster: 'eu'
         });
         subscribe();
     })
