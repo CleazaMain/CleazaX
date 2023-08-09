@@ -1,6 +1,6 @@
 'use strict'
 Pusher.logToConsole = true;
-let channelName, pusher, base = "https://sharenetic.vercel.app";
+let channelName, pusher, base = "https://cleazax.netlify.app";
 // let channelName, pusher, base = "https://sharenetic.herokuapp.com";
 // let channelName, pusher, base = "http://127.0.0.1:3000";
 fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
