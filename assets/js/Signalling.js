@@ -1,6 +1,6 @@
 'use strict'
 Pusher.logToConsole = false;
-let channelName, pusher, base = "https://cleazax.vercel.app/";
+let channelName, pusher, base = "https://cleazamain.github.io/CleazaX/";
 fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
     "method": "GET",
     "headers": {
