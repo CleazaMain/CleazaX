@@ -1,16 +1,15 @@
-
 {
-    "version": 2,
-    "builds": [
+  "version": 2,
+  "builds": [
       {
-        "src": "./backend/backend.js",
-        "use": "@netlify/node"
+          "src": "./backend/backend.js",
+          "use": "@vercel/node"
       }
-    ],
-    "routes": [
+  ],
+  "routes": [
       {
-        "src": "/(.*)",
-        "dest": "backend/backend.js"
+          "src": "/.*",
+          "dest": "backend/backend.js"
       }
-    ]
-  }
+  ]
+}
