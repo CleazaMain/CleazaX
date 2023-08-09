@@ -1,6 +1,6 @@
 'use strict';
 Pusher.logToConsole = false;
-let channelName, pusher, base = "chleax.vercel.app";
+let channelName, pusher, base = "https://chleax.vercel.app";
 
 fetch(base + "/connect" + (localStorage.id ? `?id=${localStorage.id}` : ""), {
     "method": "GET",
